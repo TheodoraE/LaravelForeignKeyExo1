@@ -35,7 +35,10 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $store = new Genre;
+	    $store->genre = $request->genre;
+	    $store->save();
+	    return redirect()->back();
     }
 
     /**

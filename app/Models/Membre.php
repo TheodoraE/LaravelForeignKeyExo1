@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Membre extends Model
 {
     use HasFactory;
+    public function genres()
+    {
+        return $this->belongsTo(Genre::class, 'genre_id');
+    }
 }

@@ -35,7 +35,12 @@ class MembreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $store = new Membre;
+	    $store->nom = $request->nom;
+	    $store->prenom = $request->prenom;
+	    $store->genre_id = $request->genre_id;
+	    $store->save();
+	    return redirect()->back();
     }
 
     /**
